@@ -481,6 +481,7 @@ ngx_http_mytest_handler(ngx_http_request_t *r)
     u->resolved->sockaddr = (struct sockaddr *)&backendSockAddr;
     u->resolved->socklen = sizeof(struct sockaddr_in);
     u->resolved->naddrs = 1;
+	u->resolved->port = 80;  //设置上游服务器端口
 
     //设置三个必须实现的回调方法，也就是5.3.3节至5.3.5节中实现的3个方法
     u->create_request = mytest_upstream_create_request;
